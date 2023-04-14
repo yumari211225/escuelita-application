@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand" href="/">Asistencia UP</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ml-auto">
+          {{#if user}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="butto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Asistencia
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/alumnos/asistencia">Listas de asistencia</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="butto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Alumnos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/alumnos">Todos los alumnos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/alumnos/add">Agrega un alumno</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/profile" class="nav-link">Mi perfil</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link">Logout</a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a href="/signin" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="/signup" class="nav-link">Registo</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+  </div>
+</nav>

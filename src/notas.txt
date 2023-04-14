@@ -1,0 +1,2 @@
+asignarle fecha al grupo y darle formato al csv
+cargar csv

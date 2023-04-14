@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/alumnos/edit/{{alumno.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" value="{{alumno.matricula}}" name="matricula" class="form-control" placeholder="Matricula" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value="{{alumno.nombre}}" name="nombre" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value="{{alumno.apellidos}}" name="apellidos" class="form-control" placeholder="Apellidos" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" value="{{alumno.correo}}" name="correo" class="form-control" placeholder="Correo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value="{{alumno.sexo}}" name="sexo" class="form-control" placeholder="Sexo" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Actualizar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

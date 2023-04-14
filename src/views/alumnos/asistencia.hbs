@@ -1,0 +1,70 @@
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Lista de Asistencia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/alumnos/import-csv" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label class="control-label">Selecciona tu archivo</label>
+              <div>
+                <input type="file" name="import-csv" accept="csv" class="form-control input-lg p-5" name="clase" id="clase" required>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <input type="submit" class="btn btn-primary" value="Importar Lista">
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-3 p-3">
+    <div class="col-md-12">
+        <div class="card text-center">
+            <a data-toggle="modal" data-target="#exampleModal" class="btn text-white btn-primary">Cargar CSV</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container p-2">
+        {{#each asistencia}}
+        <div class="col-md-12">
+            <div class="card text-center">
+                <div class="card-head">
+                    <h3 class="p-4 card-title text-uppercase text-primary">{{clase}}</h3>
+                    <h3 class="">Grupo: {{grupo}}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="m-2">Alumnos</p>
+                    {{#each alumnos}}
+                        <p>&RightArrowBar; {{[matricula]}}, {{[nombre]}}, {{[apellidos]}}, {{[correo]}}, {{[sexo]}}</p>
+                    {{/each}}
+                    <p class="text-muted">
+                       Creado: {{created_at}}
+                    </p>
+                    <a class="btn btn-primary text-white" href="/alumnos/asistencia/lista/{{id}}">
+                        Descargar
+                    </a>
+                    <a class="btn btn-danger" href="/alumnos/asistencia/delete/{{id}}">
+                        Eliminar Grupo
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No existen Listas de asistencia en el sistema.</p>
+                <a href="/alumnos">¡Registra nuevas listas de asistencia!</a>
+            </div>
+        </div>
+        {{/each}}
+</div>
+
